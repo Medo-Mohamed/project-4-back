@@ -82,7 +82,9 @@ h1 {
     padding: 30px;
     background-image: linear-gradient(to right, white, #0000002d, white);
 }
-
+#info {
+    padding: 3px;
+}
 #response p {
     margin-bottom: 10px;
 }

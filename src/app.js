@@ -17,17 +17,19 @@ app.get("/weather", (req, res) => {
     if (!req.query.address) {
         return res.send({ error: "plz enter the address name" });
     }
-    mapBox(req.query.address, (error, response) => {
+    mapBox(req.query.address, (error, data) => {
         if (error) {
             return res.send({ error });
         }
-        forcast(response.latitude, response.longitude, (error, r) => {
+        forcast(data.latitude, data.longitude, (error, re, location) => {
             if (error) {
                 return res.send({ error });
             }
             res.send({
-                location: req.query.address,
-                response: r,
+                location,
+                latitude: data.latitude,
+                longitude: data.longitude,
+                "weather info": re,
             })
         })
     })

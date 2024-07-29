@@ -1,6 +1,4 @@
 const request = require("request");
-// const callBack = require("./callBack.js");
-// const forCast = require("./forCast.js")
 function mapBox(countryName, callBack) {
     const url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + countryName + ".json?access_token=pk.eyJ1IjoiaXNsYW0yODQiLCJhIjoiY2wwamEzNmFhMGFtNTNkb3pqaXk4bXNnYSJ9.qYlrWIqo41gXgNNc4h8yIw";
     request({ url, json: true }, (error, response) => {
